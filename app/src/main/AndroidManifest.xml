@@ -13,10 +13,6 @@
         android:theme="@style/Theme.FOTPulse"
         tools:targetApi="31">
 
-        <activity android:name=".SignUpActivity"
-            android:exported="true">
-            <!-- Main activity settings -->
-        </activity>
 
         <activity
             android:name="SplashActivity"
@@ -25,6 +21,11 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".SignUpActivity"
+            android:exported="true">
+            <!-- Main activity settings -->
         </activity>
 
 
