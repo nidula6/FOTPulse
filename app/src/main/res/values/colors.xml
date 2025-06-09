@@ -7,4 +7,8 @@
     <color name="colorGoogle">#4285F4</color>
     <color name="purple_300">#9575CD</color>
 
+    <color name="footer_background">#9575CD</color>
+    <color name="purple_background">#e5d8ed</color>
+
+    <color name="searchBG">#dcbbf0</color>
 </resources>
