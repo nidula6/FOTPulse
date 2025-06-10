@@ -4,4 +4,5 @@
     <string name="version">Version : V2.0.4</string>
     <string name="poweredBy">Powered by UOC FOT ICT Department</string>
     <string name="splash_logo_desc">Splash Logo Here</string>
+    <string name="full_news">Full News</string>
 </resources>

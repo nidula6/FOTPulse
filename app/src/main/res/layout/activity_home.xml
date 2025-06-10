@@ -4,130 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/purple_background"
     android:padding="16dp">
 
-    <!-- Header with User and Logout -->
-
-    <!-- Search Bar -->
-
-    <!-- Highlights Section -->
-
-    <!-- Highlight Image (Breaking News) -->
-
-    <!-- News For You Section -->
-
-    <!-- News Card 1 -->
-
-    <!-- Repeat the above News Card layout for more news cards -->
-
-    <!-- Footer with Navigation Tabs -->
-
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="376dp"
-        android:layout_height="127dp"
-        android:background="@drawable/search_radius"
-        android:orientation="horizontal"
-        android:padding="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.532">
-
-        <ImageView
-            android:layout_width="94dp"
-            android:layout_height="110dp"
-            android:layout_marginEnd="12dp"
-            android:contentDescription="Sports News Image"
-            android:src="@drawable/newsforyou" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="73dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/news_title_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="Title"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/news_description_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Description..."
-                android:textColor="@android:color/black"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:contentDescription="Arrow Icon"
-            android:src="@drawable/outline_add_24" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="376dp"
-        android:layout_height="127dp"
-        android:background="@drawable/search_radius"
-        android:orientation="horizontal"
-        android:padding="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717">
-
-        <ImageView
-            android:layout_width="94dp"
-            android:layout_height="110dp"
-            android:layout_marginEnd="12dp"
-            android:contentDescription="Sports News Image"
-            android:src="@drawable/newsforyou" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="73dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/news_title_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="Title"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/news_description_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Description..."
-                android:textColor="@android:color/black"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:contentDescription="Arrow Icon"
-            android:src="@drawable/outline_add_24" />
-    </LinearLayout>
-
+    <!-- Logo Image -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="56dp"
@@ -140,58 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.01" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="376dp"
-        android:layout_height="127dp"
-        android:background="@drawable/search_radius"
-        android:orientation="horizontal"
-        android:padding="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.905">
-
-        <ImageView
-            android:layout_width="94dp"
-            android:layout_height="110dp"
-            android:layout_marginEnd="12dp"
-            android:contentDescription="Sports News Image"
-            android:src="@drawable/newsforyou" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="73dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/news_title_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="Title"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/news_description_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Description..."
-                android:textColor="@android:color/black"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:contentDescription="Arrow Icon"
-            android:src="@drawable/outline_add_24" />
-    </LinearLayout>
-
+    <!-- User Greeting and Logout Section -->
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
@@ -215,11 +44,22 @@
 
         <ImageView
             android:id="@+id/logout_icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_alignParentEnd="true"
             android:src="@drawable/baseline_logout_24" />
     </RelativeLayout>
+
+    <!-- Search Bar -->
+
+
+    <!-- Highlights Section -->
+
+    <!-- Highlight Image -->
+
+    <!-- Scrollable News Section -->
+
+    <!-- Footer Section with Tabs -->
 
     <EditText
         android:id="@+id/search_bar"
@@ -237,7 +77,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.108" />
+        app:layout_constraintVertical_bias="0.116" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -250,7 +90,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.182" />
 
     <ImageView
         android:id="@+id/highlight_image"
@@ -263,20 +103,18 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.236" />
+        app:layout_constraintVertical_bias="0.265" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="News For You"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="422dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431" />
+        app:layout_constraintTop_toBottomOf="@id/highlight_image"
+        app:layout_constraintVertical_bias="0.101" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -286,7 +124,7 @@
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newsRecyclerView"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp">
@@ -309,10 +147,11 @@
             android:layout_height="24dp"
             android:contentDescription="FOT Events Tab"
             android:src="@drawable/bells"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.901"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="16dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/tab_academics"
@@ -338,8 +177,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.952"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -352,9 +190,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.952"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="FOT Events"
@@ -367,7 +206,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.975" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

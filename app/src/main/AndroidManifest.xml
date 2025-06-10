@@ -32,6 +32,19 @@
 
         </activity>
 
+        <activity
+            android:name=".FullNewsActivity"
+            android:label="@string/full_news"
+            android:exported="true">
+            <!-- You can add intent filters if needed -->
+        </activity>
+
+        <!-- Home Activity (after login) -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true">
+            <!-- You can add intent filters if needed -->
+        </activity>
 
     </application>
 
