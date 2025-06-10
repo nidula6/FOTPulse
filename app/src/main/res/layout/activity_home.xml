@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,10 +15,16 @@
     <!-- Highlights Section -->
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="63dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.075"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/hi_user"
@@ -36,40 +43,9 @@
             android:src="@drawable/baseline_logout_24" />
     </RelativeLayout>
 
-    <EditText
-        android:id="@+id/search_bar"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:background="@color/searchBG"
-        android:drawableLeft="@drawable/baseline_search_24"
-        android:hint="Search News"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textColor="@android:color/black"
-        android:textSize="14sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="92dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Highlights"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"/>
-
     <!-- Highlight Image (Breaking News) -->
 
     <!-- News For You Section -->
-    <ImageView
-        android:id="@+id/highlight_image"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:contentDescription="Breaking News Image"
-        android:src="@drawable/Item1"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="265dp" />
 
     <!-- News Card 1 -->
 
@@ -77,30 +53,83 @@
 
     <!-- Footer with Navigation Tabs -->
 
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/search_radius"
+        android:drawableLeft="@drawable/baseline_search_24"
+        android:hint="Search News"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.124" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Highlights"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.188" />
+
+    <ImageView
+        android:id="@+id/highlight_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:contentDescription="Breaking News Image"
+        android:src="@drawable/breakingnews"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.272" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="News For You"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="240dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.468" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/news_card_background"
+        android:background="@drawable/search_radius"
         android:orientation="horizontal"
         android:padding="12dp"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="489dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.54">
 
         <ImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginEnd="12dp"
             android:contentDescription="Sports News Image"
-            android:src="@drawable/Imagenewsforyou" />
+            android:src="@drawable/newsforyou" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -133,37 +162,55 @@
             android:src="@drawable/outline_add_24" />
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="@color/footer_background"
+        android:background="@drawable/footer"
         android:gravity="center"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="826dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp">
 
         <ImageView
             android:id="@+id/tab_sports"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:contentDescription="Sports Tab"
-            android:src="@drawable/running" />
+            android:src="@drawable/running"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.046"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666" />
 
         <ImageView
             android:id="@+id/tab_fot_events"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="32dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:contentDescription="FOT Events Tab"
-            android:src="@drawable/el" />
+            android:src="@drawable/bells"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.953"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="16dp" />
 
         <ImageView
             android:id="@+id/tab_academics"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="32dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:contentDescription="Academics Tab"
-            android:src="@drawable/Icon3" />
-    </LinearLayout>
+            android:src="@drawable/book"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

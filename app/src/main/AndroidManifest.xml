@@ -28,6 +28,10 @@
             <!-- Main activity settings -->
         </activity>
 
+        <activity android:name=".SignUpActivity">
+
+        </activity>
+
 
     </application>
 

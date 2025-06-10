@@ -1,5 +1,6 @@
 package com.example.fotpulse;
 
+import android.content.Intent; // Import this
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -71,6 +72,14 @@ public class SignUpActivity extends AppCompatActivity {
 
             // Call Firebase sign-up method
             signUpUser(email, password, name, indexNumber);
+        });
+
+        // Set click listener for Sign In link to navigate to LoginActivity
+        findViewById(R.id.signInLink).setOnClickListener(v -> {
+            // Navigate to LoginActivity
+            Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+            startActivity(intent);  // Start the LoginActivity
+            finish();  // Optional: Close SignUpActivity after navigating to LoginActivity
         });
     }
 

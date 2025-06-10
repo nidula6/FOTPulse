@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
-
+import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -53,10 +53,9 @@ public class LoginActivity extends AppCompatActivity {
 
         // Set onClickListener for sign up button (to navigate to the sign-up screen)
         signUpButton.setOnClickListener(v -> {
-            // You can navigate to SignUpActivity here
-            // Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
-            // startActivity(intent);
-            finish(); // Close this activity if the user decides to sign up
+            // Navigate to SignUpActivity
+            Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+            startActivity(intent);  // Start the SignUpActivity
         });
     }
 

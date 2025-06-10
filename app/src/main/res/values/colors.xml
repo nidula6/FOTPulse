@@ -10,5 +10,7 @@
     <color name="footer_background">#9575CD</color>
     <color name="purple_background">#e5d8ed</color>
 
+    <color name="newsBG">#dcbbf0</color>
+
     <color name="searchBG">#dcbbf0</color>
 </resources>
