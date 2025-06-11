@@ -7,13 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import java.util.Date;  // Import the Date class
-import java.text.SimpleDateFormat;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
     private List<NewsItem> newsList;
@@ -38,6 +40,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.description.setText(newsItem.getDescription());
         Glide.with(context).load(newsItem.getImageUrl()).into(holder.image);
         holder.newsType.setText(newsItem.getType());
+
         String formattedTimestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(newsItem.getTimestamp()));
         holder.timestamp.setText(formattedTimestamp);
 
@@ -65,8 +68,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             super(itemView);
             title = itemView.findViewById(R.id.newsTitle);
             description = itemView.findViewById(R.id.newsDescription);
-            newsType = itemView.findViewById(R.id.newsType);  // Ensure this ID exists in XML
-            timestamp = itemView.findViewById(R.id.newsTimestamp);  // Ensure this ID exists in XML
+            newsType = itemView.findViewById(R.id.newsType);
+            timestamp = itemView.findViewById(R.id.newsTimestamp);
             image = itemView.findViewById(R.id.newsImage);
         }
     }

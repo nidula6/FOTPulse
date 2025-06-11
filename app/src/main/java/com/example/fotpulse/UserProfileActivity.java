@@ -1,15 +1,15 @@
 package com.example.fotpulse;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.button.MaterialButton;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,9 +21,11 @@ import com.google.firebase.database.FirebaseDatabase;
 public class UserProfileActivity extends AppCompatActivity {
 
     private ImageView logoutIcon, backIcon;
-    private TextView profileNameTextView, profileTelephoneTextView, profileEmailTextView, profileBirthdayTextView, profileIndexTextView;
+    private TextView profileNameTextView, profileEmailTextView, profileIndexTextView;
+    private EditText profileNameEditText, profileEmailEditText, profileIndexEditText;
     private FirebaseAuth mAuth;
     private DatabaseReference usersRef;
+    private MaterialButton editDetailsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +39,14 @@ public class UserProfileActivity extends AppCompatActivity {
 
         // Bind views
         profileNameTextView = findViewById(R.id.profileNameTextView);
-        profileTelephoneTextView = findViewById(R.id.profileTelephoneTextView);
         profileEmailTextView = findViewById(R.id.profileEmailTextView);
-        profileBirthdayTextView = findViewById(R.id.profileBirthdayTextView);
         profileIndexTextView = findViewById(R.id.profileIndexTextView);
-        logoutIcon = findViewById(R.id.logout_icon);  // Reference to the logout icon
-        backIcon = findViewById(R.id.back_icon);  // Reference to the back icon
+        profileNameEditText = findViewById(R.id.profileNameEditText);
+        profileEmailEditText = findViewById(R.id.profileEmailEditText);
+        profileIndexEditText = findViewById(R.id.profileIndexEditText);
+        logoutIcon = findViewById(R.id.logout_icon);
+        backIcon = findViewById(R.id.back_icon);
+        editDetailsButton = findViewById(R.id.EditDetails);
 
         // Fetch data for current user
         if (currentUser != null) {
@@ -61,54 +65,71 @@ public class UserProfileActivity extends AppCompatActivity {
                         profileNameTextView.setText("Name: " + name);
                         profileEmailTextView.setText("Email: " + email);
                         profileIndexTextView.setText("Index: " + index);
-
-                        // Optional: Set a dummy phone number and date of birth, or fetch them if available
-                        profileTelephoneTextView.setText("Telephone: +123456789");
-                        profileBirthdayTextView.setText("Date Of Birth: 01/01/1990");
                     }
                 } else {
                     Toast.makeText(UserProfileActivity.this, "Failed to load user data", Toast.LENGTH_SHORT).show();
                 }
             });
 
-            // Set OnClickListener for the logout icon to show confirmation dialog
-            logoutIcon.setOnClickListener(v -> {
-                // Create an AlertDialog to confirm sign out
-                new AlertDialog.Builder(UserProfileActivity.this)
-                        .setMessage("Are you sure you want to log out?")
-                        .setCancelable(false) // Prevent dismissing by tapping outside
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                // Log out the user
-                                mAuth.signOut();
+            // Edit details logic
+            editDetailsButton.setOnClickListener(v -> {
+                // Switch between EditText and TextView for editing user details
+                boolean isEditing = profileNameEditText.getVisibility() == View.VISIBLE;
 
-                                // Optionally show a toast to confirm the user is logged out
-                                Toast.makeText(UserProfileActivity.this, "Logged out successfully!", Toast.LENGTH_SHORT).show();
+                if (isEditing) {
+                    // Save changes to Firebase
+                    String updatedName = profileNameEditText.getText().toString();
+                    String updatedEmail = profileEmailEditText.getText().toString();
+                    String updatedIndex = profileIndexEditText.getText().toString();
 
-                                // Redirect to the login activity or home page (you can choose either)
-                                Intent intent = new Intent(UserProfileActivity.this, LoginActivity.class);  // Replace with your LoginActivity
-                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // Clear previous activities
-                                startActivity(intent);
-                                finish();  // Close the UserProfileActivity
-                            }
-                        })
-                        .setNegativeButton("No", null)  // Dismiss the dialog when "No" is clicked
-                        .show();
+                    usersRef.child(userId).child("name").setValue(updatedName);
+                    usersRef.child(userId).child("email").setValue(updatedEmail);
+                    usersRef.child(userId).child("indexNumber").setValue(updatedIndex);
+
+                    // Update the TextViews
+                    profileNameTextView.setText("Name: " + updatedName);
+                    profileEmailTextView.setText("Email: " + updatedEmail);
+                    profileIndexTextView.setText("Index: " + updatedIndex);
+                }
+
+                // Toggle visibility
+                profileNameEditText.setVisibility(isEditing ? View.GONE : View.VISIBLE);
+                profileEmailEditText.setVisibility(isEditing ? View.GONE : View.VISIBLE);
+                profileIndexEditText.setVisibility(isEditing ? View.GONE : View.VISIBLE);
+
+                profileNameTextView.setVisibility(isEditing ? View.VISIBLE : View.GONE);
+                profileEmailTextView.setVisibility(isEditing ? View.VISIBLE : View.GONE);
+                profileIndexTextView.setVisibility(isEditing ? View.VISIBLE : View.GONE);
+
+                // Update button text
+                editDetailsButton.setText(isEditing ? "Edit User" : "Save Changes");
             });
-
-            // Set OnClickListener for the back icon
-            backIcon.setOnClickListener(v -> {
-                // Use onBackPressed to navigate back to the previous activity
-                onBackPressed();
-            });
-        } else {
-            // Handle the case where user is not logged in
-            Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show();
-            // Optionally, redirect to login activity if the user is not logged in
-            Intent intent = new Intent(UserProfileActivity.this, LoginActivity.class);
-            startActivity(intent);
-            finish();
         }
+        // Inside UserProfileActivity.java
+        TextView developerInfoTextView = findViewById(R.id.DeveloperInfo);
+
+// Set OnClickListener for the TextView
+        developerInfoTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start DeveloperActivity when the TextView is clicked
+                Intent intent = new Intent(UserProfileActivity.this, DeveloperActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        // Handle the logout icon click
+        logoutIcon.setOnClickListener(v -> {
+            mAuth.signOut();
+            Toast.makeText(UserProfileActivity.this, "Logged out successfully!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(UserProfileActivity.this, LoginActivity.class));
+            finish();
+        });
+
+        // Handle the back icon click
+        backIcon.setOnClickListener(v -> onBackPressed());
     }
+
+
 }

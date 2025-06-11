@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.fotpulse.NewsItem;
@@ -45,10 +46,21 @@ public class HomeActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;  // Declare FirebaseAuth instance
     private String imageUrl, newsTitle, newsDescription, newsType, newsTimestamp;
 
+    // Declare ImageView variables
+    ImageView tabSports, tabAcademics, tabEvents;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);  // Ensure this is the correct layout
+        setContentView(R.layout.activity_home);
+        // Ensure this is the correct layout
+        // Correct the type and initialize the views
+        tabSports = findViewById(R.id.tab_sports);
+        tabAcademics = findViewById(R.id.tab_academics);
+        tabEvents = findViewById(R.id.tab_fot_events); // Make sure you have this ID defined
+
+
+        // Set onClickListener for Sports tab
 
         // Initialize FirebaseAuth
         mAuth = FirebaseAuth.getInstance();  // Initialize mAuth
@@ -194,6 +206,31 @@ public class HomeActivity extends AppCompatActivity {
                     })
                     .setNegativeButton("No", null)  // Dismiss the dialog when "No" is clicked
                     .show();  // Show the dialog
+
+
         });
+        // Set OnClickListener for the Sports tab to navigate to CategoryNewsActivity
+        tabSports.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, CategoryNewsActivity.class);
+            intent.putExtra("category", "Sports");  // Pass category as extra
+            startActivity(intent);  // Start CategoryNewsActivity
+        });
+
+// Set OnClickListener for the Academics tab to navigate to CategoryNewsActivity
+        tabAcademics.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, CategoryNewsActivity.class);
+            intent.putExtra("category", "Academics");  // Pass category as extra
+            startActivity(intent);  // Start CategoryNewsActivity
+        });
+
+// Set OnClickListener for the Events tab to navigate to CategoryNewsActivity
+        tabEvents.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, CategoryNewsActivity.class);
+            intent.putExtra("category", "Events");  // Pass category as extra
+            startActivity(intent);  // Start CategoryNewsActivity
+        });
+
     }
+
+
 }

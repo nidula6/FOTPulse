@@ -1,5 +1,9 @@
 package com.example.fotpulse;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class NewsItem {
 
     private String type;
@@ -19,6 +23,13 @@ public class NewsItem {
         this.description = description;
         this.timestamp = timestamp;
         this.imageUrl = imageUrl;
+    }
+
+    public String getTimestampString() {
+        // Convert long timestamp to a readable String format
+        Date date = new Date(timestamp); // Correct constructor for long timestamp
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        return sdf.format(date); // Format the date into a string
     }
 
     // Getters and Setters for Firebase to access the data
@@ -47,7 +58,7 @@ public class NewsItem {
     }
 
     public long getTimestamp() {
-        return timestamp;
+        return timestamp; // Return as long
     }
 
     public void setTimestamp(long timestamp) {
