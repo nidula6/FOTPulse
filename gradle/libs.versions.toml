@@ -26,6 +26,8 @@ firebase-database = { group = "com.google.firebase", name = "firebase-database",
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
 firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+googleplay = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "googleplay" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

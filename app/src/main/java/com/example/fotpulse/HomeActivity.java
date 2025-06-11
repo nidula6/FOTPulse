@@ -1,9 +1,12 @@
 package com.example.fotpulse;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -15,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,12 +35,14 @@ import java.util.Locale;
 public class HomeActivity extends AppCompatActivity {
 
     private RecyclerView newsRecyclerView;
+    private ImageView logoutIcon;
     private NewsAdapter newsAdapter;
     private List<NewsItem> newsList;
     private List<NewsItem> filteredNewsList;  // Filtered news list for search
     private DatabaseReference newsRef;
-    private ImageView highlightImage;
+    private ImageView highlightImage, profileImage;
 
+    private FirebaseAuth mAuth;  // Declare FirebaseAuth instance
     private String imageUrl, newsTitle, newsDescription, newsType, newsTimestamp;
 
     @Override
@@ -43,17 +50,24 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);  // Ensure this is the correct layout
 
-        // Initialize RecyclerView and adapter
+        // Initialize FirebaseAuth
+        mAuth = FirebaseAuth.getInstance();  // Initialize mAuth
+
+        // Bind views
+        logoutIcon = findViewById(R.id.logout_icon);
+        profileImage = findViewById(R.id.profileImageView);  // Profile image for navigation
         newsRecyclerView = findViewById(R.id.newsRecyclerView);  // Ensure the ID matches the XML layout
         newsRecyclerView.setLayoutManager(new LinearLayoutManager(this));  // Set LayoutManager
         highlightImage = findViewById(R.id.highlight_image);
+
+        // Initialize Firebase Realtime Database reference
+        newsRef = FirebaseDatabase.getInstance().getReference("news");
+
+        // Initialize lists and adapter
         newsList = new ArrayList<>();
         filteredNewsList = new ArrayList<>();  // Initialize the filtered list
         newsAdapter = new NewsAdapter(filteredNewsList, this);  // Use filtered list in the adapter
         newsRecyclerView.setAdapter(newsAdapter);  // Set Adapter to RecyclerView
-
-        // Initialize Firebase Realtime Database reference
-        newsRef = FirebaseDatabase.getInstance().getReference("news");
 
         // Fetch news items from Firebase
         newsRef.addValueEventListener(new ValueEventListener() {
@@ -149,6 +163,37 @@ public class HomeActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(HomeActivity.this, "No image or data to display", Toast.LENGTH_SHORT).show();
             }
+        });
+
+        // Set OnClickListener for the profile image (navigate to UserProfileActivity)
+        profileImage.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, UserProfileActivity.class);
+            startActivity(intent);  // Navigate to UserProfileActivity
+        });
+
+        // Set OnClickListener for the logout icon to show confirmation dialog
+        logoutIcon.setOnClickListener(v -> {
+            new AlertDialog.Builder(HomeActivity.this)
+                    .setMessage("Are you sure you want to log out?")
+                    .setCancelable(false) // Prevent dismissing by tapping outside
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Log out the user
+                            mAuth.signOut();
+
+                            // Optionally show a toast to confirm the user is logged out
+                            Toast.makeText(HomeActivity.this, "Logged out successfully!", Toast.LENGTH_SHORT).show();
+
+                            // Redirect to the login activity
+                            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);  // Replace with your LoginActivity
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // Clear previous activities
+                            startActivity(intent);
+                            finish();  // Close the HomeActivity
+                        }
+                    })
+                    .setNegativeButton("No", null)  // Dismiss the dialog when "No" is clicked
+                    .show();  // Show the dialog
         });
     }
 }

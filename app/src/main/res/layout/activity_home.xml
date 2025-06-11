@@ -9,7 +9,7 @@
 
     <!-- Logo Image -->
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/profileImageView"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:src="@drawable/splash_logo"
