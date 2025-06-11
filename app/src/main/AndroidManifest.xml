@@ -48,6 +48,10 @@
         <activity android:name=".UserProfileActivity">
 
         </activity>
+        <activity android:name=".DeveloperActivity">
+            <!-- Optionally add an intent filter if you want it to be the main activity or handle certain actions -->
+        </activity>
+        <activity android:name=".CategoryNewsActivity" />
 
     </application>
 

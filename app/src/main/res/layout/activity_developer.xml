@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserProfileActivity"
+    tools:context=".DeveloperActivity"
 
     >
 
@@ -34,6 +34,7 @@
 
         <!-- CardView for Index -->
 
+
         <androidx.cardview.widget.CardView
             android:id="@+id/profileNameCard"
             android:layout_width="match_parent"
@@ -59,18 +60,7 @@
                 android:textStyle="bold"/>
 
             <!-- EditText for Name (hidden by default) -->
-            <EditText
-                android:id="@+id/profileNameEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="16dp"
-                android:paddingTop="12dp"
-                android:paddingBottom="12dp"
-                android:visibility="gone"
-                android:hint="Enter new name"
-            android:textColor="#340083"
-            android:textSize="18sp"
-            android:inputType="textPersonName"/>
+
 
         </androidx.cardview.widget.CardView>
 
@@ -84,8 +74,8 @@
             app:cardElevation="6dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.475"
-            tools:layout_editor_absoluteX="12dp">
+            app:layout_constraintVertical_bias="0.467"
+            tools:layout_editor_absoluteX="8dp">
 
             <TextView
                 android:id="@+id/profileTelephoneTextView"
@@ -102,6 +92,7 @@
 
         </androidx.cardview.widget.CardView>
 
+
         <androidx.cardview.widget.CardView
             android:id="@+id/profileEmailCard"
             android:layout_width="match_parent"
@@ -112,7 +103,7 @@
             app:cardElevation="6dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.561"
+            app:layout_constraintVertical_bias="0.548"
             tools:layout_editor_absoluteX="12dp">
 
             <TextView
@@ -122,24 +113,13 @@
                 android:paddingStart="16dp"
                 android:paddingTop="12dp"
                 android:paddingBottom="12dp"
-                android:text="Email: nidula@example.com"
+                android:text="Email: nidulajayawardhana@gmail.com"
                 android:textColor="#340083"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <!-- EditText for Email (hidden by default) -->
-            <EditText
-                android:id="@+id/profileEmailEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="16dp"
-                android:paddingTop="12dp"
-                android:paddingBottom="12dp"
-                android:visibility="gone"
-                android:hint="Enter new email"
-            android:textColor="#340083"
-            android:textSize="18sp"
-            android:inputType="textEmailAddress"/>
+
 
         </androidx.cardview.widget.CardView>
 
@@ -153,8 +133,8 @@
             app:cardElevation="6dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.653"
-            tools:layout_editor_absoluteX="8dp">
+            app:layout_constraintVertical_bias="0.636"
+            tools:layout_editor_absoluteX="12dp">
 
             <TextView
                 android:id="@+id/profileBirthdayTextView"
@@ -164,7 +144,7 @@
                 android:paddingStart="16dp"
                 android:paddingTop="12dp"
                 android:paddingBottom="12dp"
-                android:text="Date Of Birth: 01-01-1990"
+                android:text="Date Of Birth: 05-03-2002"
                 android:textColor="#340083"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -181,8 +161,8 @@
             app:cardElevation="6dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.73"
-            tools:layout_editor_absoluteX="16dp">
+            app:layout_constraintVertical_bias="0.706"
+            tools:layout_editor_absoluteX="12dp">
 
             <TextView
                 android:id="@+id/profileIndexTextView"
@@ -191,39 +171,27 @@
                 android:paddingStart="16dp"
                 android:paddingTop="12dp"
                 android:paddingBottom="12dp"
-                android:text="Index: 12345"
+                android:text="Index: 2022t01554"
                 android:textColor="#340083"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
-
-            <!-- EditText for Index (hidden by default) -->
-            <EditText
-                android:id="@+id/profileIndexEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="16dp"
-                android:paddingTop="12dp"
-                android:paddingBottom="12dp"
-                android:visibility="gone"
-            android:hint="Enter new index"
-            android:textColor="#340083"
-            android:textSize="18sp"
-            android:inputType="number"/>
+                android:textStyle="bold" />
 
 
         </androidx.cardview.widget.CardView>
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/avatar"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/avatar"
+            android:src="@drawable/deve"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.136" />
+            app:layout_constraintVertical_bias="0.136"
+            app:shapeAppearanceOverlay="@style/CircularShape" />
+
 
         <ImageView
             android:id="@+id/back_icon"
@@ -237,51 +205,24 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.066" />
 
-        <ImageView
-            android:id="@+id/logout_icon"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentEnd="true"
-            android:src="@drawable/baseline_logout_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.886"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.066" />
 
         <TextView
-            android:id="@+id/userInfo"
+            android:id="@+id/DeveloperInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:text="USER INFO"
+            android:text="DEVELOPER INFO"
             android:textColor="#1f2938"
             android:textSize="20sp"
             android:textStyle="bold|italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
 
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.264" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/EditDetails"
-            android:layout_width="120dp"
-            android:layout_height="46dp"
-            android:text="Edit User"
-            android:textColor="#ffffff"
-            android:textSize="16sp"
-            app:backgroundTint="#9B4DFF"
-            app:cornerRadius="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.51"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.313" />
 
         <TextView
             android:id="@+id/version_text"
@@ -301,41 +242,59 @@
             app:layout_constraintVertical_bias="0.981"
             tools:ignore="MissingConstraints" />
 
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/uni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profileEmailCard"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.166"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.809"><TextView
+            android:id="@+id/uniview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Department: University Of Colombo Faculty Of Technology (2022)"
+            android:textColor="#340083"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8"
+            tools:layout_editor_absoluteX="0dp" />
+
+        </androidx.cardview.widget.CardView>
+
         <TextView
-            android:id="@+id/DeveloperInfo"
+            android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:text="See Developer info ."
-            android:textColor="#028bb5"
-            android:textSize="18sp"
-            android:textStyle="italic"
+            android:text="Back"
+            android:textColor="#1f2938"
+            android:textSize="15sp"
+            android:textStyle="bold"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.063"
+            app:layout_constraintHorizontal_bias="0.132"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.786" />
+            app:layout_constraintVertical_bias="0.107" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <TextView
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Back"
-        android:textColor="#1f2938"
-        android:textSize="15sp"
-        android:textStyle="bold"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.107" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
