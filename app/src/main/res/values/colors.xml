@@ -2,4 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="purple">#6200EE</color>
+    <color name="purple1">#8e24aa</color>
+    <color name="colorGoogle">#4285F4</color>
+    <color name="purple_300">#9575CD</color>
+
+    <color name="footer_background">#9575CD</color>
+    <color name="purple_background">#f7f0fa</color>
+
+    <color name="newsBG">#dcbbf0</color>
+
+    <color name="searchBG">#dcbbf0</color>
+    <color name="user">#8133F1</color>
 </resources>
