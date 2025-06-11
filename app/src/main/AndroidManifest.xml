@@ -45,6 +45,9 @@
             android:exported="true">
             <!-- You can add intent filters if needed -->
         </activity>
+        <activity android:name=".UserProfileActivity">
+
+        </activity>
 
     </application>
 

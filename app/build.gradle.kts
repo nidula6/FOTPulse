@@ -13,7 +13,6 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -47,8 +46,6 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation(libs.recyclerview)
-    implementation("com.github.bumptech.glide:glide:4.13.0") // Add this for Glide
-
-    // Optional: Glide compiler for annotation processing
+    implementation("com.github.bumptech.glide:glide:4.13.0")
     implementation("com.github.bumptech.glide:compiler:4.13.0")
 }
