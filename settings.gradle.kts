@@ -11,14 +11,15 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        google()
+        google()  // For Firebase and other dependencies
         mavenCentral()
+        maven("https://jitpack.io")
     }
 }
 
 rootProject.name = "FOT Pulse"
 include(":app")
- 
