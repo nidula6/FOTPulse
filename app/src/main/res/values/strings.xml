@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FOT Pulse</string>
+    <string name="app_name">Tech Pulse</string>
     <string name="splash_logo">Splash screen image</string>
     <string name="version">Version : V2.0.4</string>
     <string name="poweredBy">Powered by UOC FOT ICT Department</string>
