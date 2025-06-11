@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.fotpulse"
+    namespace = "com.example.TechPulse"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.fotpulse"
+        applicationId = "com.example.Techpulse"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

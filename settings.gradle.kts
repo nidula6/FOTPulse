@@ -21,5 +21,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "FOT Pulse"
+rootProject.name = "Tech Pulse"
 include(":app")

@@ -1,4 +1,4 @@
-package com.example.fotpulse;
+package com.example.TechPulse;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

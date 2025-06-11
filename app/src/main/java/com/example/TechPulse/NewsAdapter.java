@@ -1,4 +1,4 @@
-package com.example.fotpulse;
+package com.example.TechPulse;
 
 import android.content.Context;
 import android.content.Intent;
