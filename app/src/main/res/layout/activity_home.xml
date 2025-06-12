@@ -38,11 +38,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:text="Hi, Welcome to The Home Page"
+            android:layout_marginStart="48dp"
 
+            android:text="Hi, Welcome to The Home Page"
             android:textColor="#6B4DCF"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
@@ -92,7 +93,7 @@
     <ImageView
         android:id="@+id/highlight_image"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="190dp"
         android:contentDescription="Breaking News Image"
         android:src="@drawable/breakingnews"
         app:layout_constraintBottom_toBottomOf="parent"
