@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "30327931839",
+    "firebase_url": "https://techpulse-be645-default-rtdb.firebaseio.com",
+    "project_id": "techpulse-be645",
+    "storage_bucket": "techpulse-be645.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:30327931839:android:335fb606ef4e5f753bd70a",
+        "android_client_info": {
+          "package_name": "com.example.Techpulse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYBer3yzgkCSF_mB-8RM2JDrvPGS0eyfA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
