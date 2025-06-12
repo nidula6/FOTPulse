@@ -31,8 +31,8 @@
 
         <LinearLayout
             android:id="@+id/newsContainer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="380dp"
+            android:layout_height="898dp"
             android:orientation="vertical"
             android:padding="16dp"
             android:scrollbars="vertical" />
