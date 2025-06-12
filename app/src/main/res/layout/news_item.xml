@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="150dp"
     android:elevation="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
         android:padding="12dp">
 
@@ -27,11 +27,11 @@
                 android:id="@+id/newsType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="News Type"
-                android:textSize="12sp"
-                android:textStyle="italic"
                 android:textColor="@android:color/darker_gray"
-                android:layout_marginBottom="8dp"/>
+                android:textSize="12sp"
+                android:textStyle="italic" />
 
             <!-- News Title TextView -->
             <TextView
@@ -55,10 +55,10 @@
                 android:id="@+id/newsTimestamp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="Timestamp"
-                android:textSize="12sp"
                 android:textColor="@android:color/darker_gray"
-                android:layout_marginTop="8dp" />
+                android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
