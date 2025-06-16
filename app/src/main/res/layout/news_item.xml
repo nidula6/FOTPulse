@@ -2,65 +2,67 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:elevation="4dp"
-    >
+    android:elevation="8dp"
+    android:layout_margin="8dp"
+    android:backgroundTint="@android:color/holo_purple">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:padding="12dp"
-        android:background="@color/purple_background">
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="horizontal"
+android:padding="12dp"
+android:background="@color/purple_background">
 
-        <ImageView
-            android:id="@+id/newsImage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="16dp" />
+<ImageView
+    android:id="@+id/newsImage"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_marginEnd="16dp" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="vertical">
 
-            <!-- News Type TextView added at the top -->
-            <TextView
-                android:id="@+id/newsType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="News Type"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="12sp"
-                android:textStyle="italic" />
+    <!-- News Type TextView added at the top -->
+    <TextView
+        android:id="@+id/newsType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="News Type"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12sp"
+        android:textStyle="italic" />
 
-            <!-- News Title TextView -->
-            <TextView
-                android:id="@+id/newsTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="News Title"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+    <!-- News Title TextView -->
+    <TextView
+        android:id="@+id/newsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="News Title"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
-            <!-- News Description TextView -->
-            <TextView
-                android:id="@+id/newsDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="News Description"
-                android:textSize="14sp" />
+    <!-- News Description TextView -->
+    <TextView
+        android:id="@+id/newsTimestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Timestamp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12sp" />
 
-            <!-- Timestamp TextView added at the bottom -->
-            <TextView
-                android:id="@+id/newsTimestamp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Timestamp"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="12sp" />
-        </LinearLayout>
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/newsDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="News Description"
+        android:textSize="14sp" />
+
+    <!-- Timestamp TextView added at the bottom -->
+</LinearLayout>
+</LinearLayout>
+    </androidx.cardview.widget.CardView>

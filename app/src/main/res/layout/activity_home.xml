@@ -40,7 +40,7 @@
             android:layout_alignParentStart="true"
             android:layout_marginStart="48dp"
 
-            android:text="Hi, Welcome to The Home Page"
+            android:text="Welcome to The Home Page"
             android:textColor="#6B4DCF"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -62,8 +62,9 @@
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:background="@drawable/search_radius"
         android:drawableLeft="@drawable/baseline_search_24"
+
+        android:background="@drawable/searchview_shadow"
         android:hint="Search News"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
@@ -74,47 +75,52 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.11" />
+        app:layout_constraintVertical_bias="0.119"
+
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Highlights"
-        android:textStyle="bold"
-
         android:textColor="#472180"
+
+
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.174" />
+        app:layout_constraintVertical_bias="0.184" />
 
     <ImageView
         android:id="@+id/highlight_image"
-        android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_width="380dp"
+        android:layout_height="183dp"
+        android:layout_gravity="center"
+        android:elevation="8dp"
         android:contentDescription="Breaking News Image"
-        android:src="@drawable/breakingnews"
+        android:src="@drawable/imageview_shadow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintVertical_bias="0.274" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/newsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="422dp"
+        android:background="@color/purple_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/highlight_image"
-        app:layout_constraintVertical_bias="0.101"
-        android:background="@color/purple_background"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.843" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -125,6 +131,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -218,15 +225,15 @@
         android:layout_centerHorizontal="true"
         android:text="Log Out"
         android:textColor="#1f2938"
-        android:textSize="15sp"
+        android:textSize="12sp"
         android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.985"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <ImageView
         android:id="@+id/logout_icon"
