@@ -48,4 +48,5 @@ dependencies {
     implementation(libs.recyclerview)
     implementation("com.github.bumptech.glide:glide:4.13.0")
     implementation("com.github.bumptech.glide:compiler:4.13.0")
+    implementation (libs.cardview)
 }

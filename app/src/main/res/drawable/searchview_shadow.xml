@@ -1,0 +1,16 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/white" /> <!-- White background for the SearchView -->
+    <corners android:radius="8dp" /> <!-- Optional: rounded corners -->
+    <padding
+        android:left="8dp"
+        android:top="8dp"
+        android:right="8dp"
+        android:bottom="8dp" />
+    <!-- Shadow Effect -->
+    <shadow
+        android:color="@color/black"
+    android:radius="4dp" />
+
+    <corners android:radius="20dp"/>
+    <solid android:color="@color/searchBG" />
+</shape>
