@@ -48,7 +48,7 @@ public class CategoryNewsActivity extends AppCompatActivity {
             // Create an Intent to navigate back to HomeActivity
             Intent intent = new Intent(CategoryNewsActivity.this, HomeActivity.class);
             startActivity(intent);  // Start HomeActivity
-            finish();  // Optional: Close CategoryNewsActivity if you don't want it in the back stack
+            finish();
         });
         // Fetch data from Firebase and filter by category
         newsRef.addValueEventListener(new ValueEventListener() {
