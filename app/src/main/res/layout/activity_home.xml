@@ -113,7 +113,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/newsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="422dp"
+        android:layout_height="410dp"
         android:background="@color/purple_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
