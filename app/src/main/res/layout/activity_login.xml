@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@drawable/loginbg">
+    android:background="@color/white">
 
 
     <ImageView
@@ -20,6 +20,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.139" />
+
+    <ImageView
+        android:id="@+id/rectangles"
+        android:layout_width="336dp"
+        android:layout_height="354dp"
+        android:src="@drawable/formlog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.581" />
 
     <TextView
         android:id="@+id/loginTitle"
@@ -48,11 +60,12 @@
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangles"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.450"
+        app:layout_constraintHorizontal_bias="0.376"
+        app:layout_constraintStart_toStartOf="@+id/rectangles"
+        app:layout_constraintTop_toTopOf="@+id/rectangles"
+        app:layout_constraintVertical_bias="0.21"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -69,44 +82,45 @@
         android:textColor="@android:color/black"
         android:textSize="16sp"
         app:cornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangles"
+        app:layout_constraintEnd_toEndOf="@+id/rectangles"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="@+id/rectangles"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.550"
+        app:layout_constraintVertical_bias="0.745"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginButton"
         android:layout_width="273dp"
         android:layout_height="48dp"
-        android:layout_marginTop="32dp"
         android:text="Log In"
         android:textColor="#ffffff"
         android:textSize="16sp"
         app:backgroundTint="#9B4DFF"
         app:cornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.620" />
+        app:layout_constraintBottom_toBottomOf="@+id/rectangles"
+        app:layout_constraintEnd_toEndOf="@+id/rectangles"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@+id/rectangles"
+        app:layout_constraintTop_toTopOf="@+id/rectangles"
+        app:layout_constraintVertical_bias="0.689" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signUpButton"
         android:layout_width="273dp"
         android:layout_height="48dp"
-        android:layout_marginTop="32dp"
         android:text="Sign Up"
         android:textColor="#ffffff"
         android:textSize="16sp"
         app:backgroundTint="#9B4DFF"
         app:cornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangles"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.690" />
+        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintStart_toStartOf="@+id/rectangles"
+        app:layout_constraintTop_toTopOf="@+id/rectangles"
+        app:layout_constraintVertical_bias="0.882" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/emailLabel"
