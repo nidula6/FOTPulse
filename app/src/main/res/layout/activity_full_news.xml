@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#dfb6fa">
+    android:background="#ffff">
 
 
     <ImageView
@@ -84,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Timestamp"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -99,7 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="News Type"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/holo_purple"
         android:textSize="25sp"
         android:textStyle="italic|bold"
         app:layout_constraintBottom_toBottomOf="parent"
