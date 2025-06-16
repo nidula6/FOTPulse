@@ -17,8 +17,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private TextInputEditText nameInput, emailInput, indexNumberInput, passwordInput;
-    private TextInputLayout nameInputLayout, emailInputLayout, indexNumberInputLayout, passwordInputLayout;
+    private TextInputEditText nameInput, emailInput, indexNumberInput, passwordInput, repeatPasswordInput;
+    private TextInputLayout nameInputLayout, emailInputLayout, indexNumberInputLayout, passwordInputLayout, repeatPasswordInputLayout;
     private MaterialButton signUpButton;
     private FirebaseAuth mAuth;
 
@@ -35,11 +35,14 @@ public class SignUpActivity extends AppCompatActivity {
         emailInput = findViewById(R.id.emailInput);
         indexNumberInput = findViewById(R.id.indexNumberInput);
         passwordInput = findViewById(R.id.passwordInput);
+        repeatPasswordInput = findViewById(R.id.RepeatpasswordInput);
 
+        // Initialize TextInputLayout views
         nameInputLayout = findViewById(R.id.nameInputLayout);
         emailInputLayout = findViewById(R.id.emailInputLayout);
         indexNumberInputLayout = findViewById(R.id.indexNumberInputLayout);
         passwordInputLayout = findViewById(R.id.passwordInputLayout);
+        repeatPasswordInputLayout = findViewById(R.id.repeatPasswordInputLayout);  // Ensure the correct ID is used
 
         signUpButton = findViewById(R.id.signUpButton);
 
@@ -50,6 +53,7 @@ public class SignUpActivity extends AppCompatActivity {
             String email = emailInput.getText().toString().trim();
             String indexNumber = indexNumberInput.getText().toString().trim();
             String password = passwordInput.getText().toString().trim();
+            String repeatPassword = repeatPasswordInput.getText().toString().trim();  // Declare repeatPassword inside the listener
 
             // Validate inputs
             if (TextUtils.isEmpty(name)) {
@@ -66,6 +70,16 @@ public class SignUpActivity extends AppCompatActivity {
             }
             if (TextUtils.isEmpty(password)) {
                 passwordInputLayout.setError("Password is required");
+                return;
+            }
+            if (TextUtils.isEmpty(repeatPassword)) {
+                repeatPasswordInputLayout.setError("Please repeat your password");
+                return;
+            }
+
+            // Check if passwords match
+            if (!password.equals(repeatPassword)) {
+                repeatPasswordInputLayout.setError("Passwords do not match");
                 return;
             }
 

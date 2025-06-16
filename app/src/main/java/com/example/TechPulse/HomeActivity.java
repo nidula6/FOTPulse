@@ -50,8 +50,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        // Ensure this is the correct layout
-        // Correct the type and initialize the views
+
         tabSports = findViewById(R.id.tab_sports);
         tabAcademics = findViewById(R.id.tab_academics);
         tabEvents = findViewById(R.id.tab_fot_events); // Make sure you have this ID defined
@@ -65,7 +64,7 @@ public class HomeActivity extends AppCompatActivity {
         // Bind views
         logoutIcon = findViewById(R.id.logout_icon);
         profileImage = findViewById(R.id.profileImageView);  // Profile image for navigation
-        newsRecyclerView = findViewById(R.id.newsRecyclerView);  // Ensure the ID matches the XML layout
+        newsRecyclerView = findViewById(R.id.newsRecyclerView);
         newsRecyclerView.setLayoutManager(new LinearLayoutManager(this));  // Set LayoutManager
         highlightImage = findViewById(R.id.highlight_image);
 
@@ -93,7 +92,7 @@ public class HomeActivity extends AppCompatActivity {
                         newsList.add(newsItem);
 
                         // Set the first news item or a specific news item as the highlight image
-                        if (snapshot.getKey().equals("8")) {  // Example condition to get highlight item (adjust as needed)
+                        if (snapshot.getKey().equals("8")) {
                             imageUrl = newsItem.getImageUrl();
                             newsTitle = newsItem.getTitle();
                             newsDescription = newsItem.getDescription();
@@ -108,7 +107,7 @@ public class HomeActivity extends AppCompatActivity {
                             if (imageUrl != null && !imageUrl.isEmpty()) {
                                 Glide.with(HomeActivity.this).load(imageUrl).into(highlightImage);
                             } else {
-                                highlightImage.setImageResource(R.drawable.breakingnews);  // Use default image if URL is null
+                                highlightImage.setImageResource(R.drawable.breakingnews);
                             }
                         }
                     }
@@ -132,7 +131,7 @@ public class HomeActivity extends AppCompatActivity {
         searchBar.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
-                // Optional: Handle before text changes
+
             }
 
             @Override

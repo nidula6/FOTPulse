@@ -46,7 +46,7 @@ public class FullNewsActivity extends AppCompatActivity {
 
         // Set up the back button click listener
         backIcon.setOnClickListener(v -> {
-            // Finish this activity and return to the previous activity
+
             finish();
         });
     }

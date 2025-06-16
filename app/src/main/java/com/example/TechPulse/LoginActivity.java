@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
             loginUser(email, password);
         });
 
-        // Set onClickListener for sign up button (to navigate to the sign-up screen)
+
         signUpButton.setOnClickListener(v -> {
             // Navigate to SignUpActivity
             Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
