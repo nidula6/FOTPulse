@@ -42,7 +42,7 @@ Before you begin, ensure that you have the following installed:
 
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/yourusername/Tech_Pulse.git
+   https://github.com/nidula6/Tech_Pulse.git
    ```
 
 2. Open the project in Android Studio.
