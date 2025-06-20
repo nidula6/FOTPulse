@@ -1,51 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purple"
     android:padding="16dp">
 
     <!-- Logo at the top -->
-<ImageView
-android:id="@+id/splash_logo"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_centerHorizontal="true"
-android:layout_marginTop="120dp"
-android:src="@drawable/splash_logo"
-    android:contentDescription="@string/splash_logo_desc" />
+    <!-- Use android:layout_marginTop -->
 
     <!-- Progress Bar (Spinner) -->
-<ProgressBar
-android:id="@+id/splash_progress"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_centerHorizontal="true"
-android:layout_below="@id/splash_logo"
-android:layout_marginTop="30dp"
-android:indeterminate="true" />
+    <ImageView
+        android:id="@+id/splash_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:contentDescription="@string/splash_logo_desc"
+        android:src="@drawable/splash_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Use android:layout_marginTop -->
 
     <!-- Footer Text -->
-<TextView
-android:id="@+id/footer_text"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_alignParentBottom="true"
-android:layout_centerHorizontal="true"
-android:layout_marginBottom="30dp"
-android:text="@string/poweredBy"
-android:textColor="#B0B0B0"
-android:textSize="12sp" />
 
     <!-- Version Text -->
-<TextView
-android:id="@+id/version_text"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_alignParentBottom="true"
-android:layout_centerHorizontal="true"
-android:layout_marginBottom="10dp"
-android:text="@string/version"
-android:textColor="#B0B0B0"
-android:textSize="14sp" />
-    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/splash_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:indeterminate="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/splash_logo"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/footer_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        android:text="@string/poweredBy"
+        android:textColor="#B0B0B0"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/splash_progress" />
+
+    <TextView
+        android:id="@+id/version_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/version"
+        android:textColor="#B0B0B0"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/footer_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
