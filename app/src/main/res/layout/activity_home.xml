@@ -30,40 +30,25 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.076"
-        tools:ignore="MissingConstraints">
-
+        app:layout_constraintVertical_bias="0.076">
         <TextView
             android:id="@+id/hi_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_marginStart="48dp"
-
             android:text="Welcome to The Home Page"
             android:textColor="#6B4DCF"
             android:textSize="20sp"
             android:textStyle="bold" />
-
     </RelativeLayout>
 
     <!-- Search Bar -->
-
-
-    <!-- Highlights Section -->
-
-    <!-- Highlight Image -->
-
-    <!-- Scrollable News Section -->
-
-    <!-- Footer Section with Tabs -->
-
     <EditText
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:drawableLeft="@drawable/baseline_search_24"
-
         android:background="@drawable/searchview_shadow"
         android:hint="Search News"
         android:paddingStart="16dp"
@@ -75,17 +60,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119"
+        app:layout_constraintVertical_bias="0.119" />
 
-        />
-
+    <!-- Highlights Section -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Highlights"
         android:textColor="#472180"
-
-
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
@@ -95,6 +77,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.184" />
 
+    <!-- Highlight Image -->
     <ImageView
         android:id="@+id/highlight_image"
         android:layout_width="380dp"
@@ -110,6 +93,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.274" />
 
+    <!-- Scrollable News Section -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/newsRecyclerView"
         android:layout_width="match_parent"
@@ -122,6 +106,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.843" />
 
+    <!-- Footer Section with Tabs -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -134,9 +119,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints">
-
+        app:layout_constraintVertical_bias="1.0">
         <ImageView
             android:id="@+id/tab_sports"
             android:layout_width="24dp"
@@ -148,7 +131,6 @@
             app:layout_constraintHorizontal_bias="0.076"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
         <ImageView
             android:id="@+id/tab_fot_events"
             android:layout_width="24dp"
@@ -160,7 +142,6 @@
             app:layout_constraintHorizontal_bias="0.901"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
         <ImageView
             android:id="@+id/tab_academics"
             android:layout_width="24dp"
@@ -172,7 +153,6 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -186,7 +166,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.952" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -199,7 +178,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.952" />
-
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
@@ -214,9 +192,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.975" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- Log Out Section -->
     <TextView
         android:id="@+id/back"
         android:layout_width="wrap_content"
@@ -227,7 +205,6 @@
         android:textColor="#1f2938"
         android:textSize="12sp"
         android:textStyle="bold"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.985"

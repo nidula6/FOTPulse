@@ -35,7 +35,7 @@ public class SignUpActivity extends AppCompatActivity {
         emailInput = findViewById(R.id.emailInput);
         indexNumberInput = findViewById(R.id.indexNumberInput);
         passwordInput = findViewById(R.id.passwordInput);
-        repeatPasswordInput = findViewById(R.id.RepeatpasswordInput);
+        repeatPasswordInput = findViewById(R.id.repeatPasswordInput);
 
         // Initialize TextInputLayout views
         nameInputLayout = findViewById(R.id.nameInputLayout);
